@@ -1,0 +1,52 @@
+package main
+
+import "fmt"
+
+func main() {
+	var i, n int
+	var sp, ast int
+
+	n = 17
+	for i = 1; i <= n; i++ {
+		if i == 1 {
+			fmt.Print("* ")
+			for sp = 1; sp <= (n+(n/4))/3; sp++ {
+				fmt.Print("  ")
+			}
+			fmt.Print("* ")
+			for ast = 1; ast <= n/2; ast++ {
+				fmt.Print("* ")
+			}
+		} else if i <= n/2 {
+			fmt.Print("* ")
+			for sp = 1; sp <= (n+(n/4))/3; sp++ {
+				fmt.Print("  ")
+			}
+			fmt.Print("* ")
+		} else if i == n/2+1 {
+			for ast = 1; ast <= n; ast++ {
+				fmt.Print("* ")
+			}
+		} else if i > n/2 && i < n {
+			for sp = 1; sp <= n/2; sp++ {
+				fmt.Print("  ")
+			}
+			fmt.Print("* ")
+			for sp = 1; sp <= (n+(n/4))/3; sp++ {
+				fmt.Print("  ")
+			}
+			fmt.Print("* ")
+		} else {
+			for ast = 1; ast <= n/2; ast++ {
+				fmt.Print("* ")
+			}
+			fmt.Print("* ")
+			for sp = 1; sp <= (n+(n/4))/3; sp++ {
+				fmt.Print("  ")
+			}
+			fmt.Print("* ")
+		}
+		fmt.Println()
+	}
+
+}
