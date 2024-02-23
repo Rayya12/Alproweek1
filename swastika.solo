@@ -6,8 +6,20 @@ func main() {
 	var i, n int
 	var sp, ast int
 
-	n = 17
+	// input n
+	fmt.Scanln(&n)
+	// input hanya bisa ganjil jika genap maka -1
+	if n%2 == 0 {
+		n -= 1
+	}
+	// program terbatas dari 0 sampai 17
+	if n > 17 || n < 0 {
+		n = 9
+	}
+
+	// perulangan utama
 	for i = 1; i <= n; i++ {
+		// print baris pertama
 		if i == 1 {
 			fmt.Print("* ")
 			for sp = 1; sp <= (n+(n/4))/3; sp++ {
@@ -17,16 +29,20 @@ func main() {
 			for ast = 1; ast <= n/2; ast++ {
 				fmt.Print("* ")
 			}
+		// print baris kedua 2 asterisk dan spasi (left)
 		} else if i <= n/2 {
 			fmt.Print("* ")
 			for sp = 1; sp <= (n+(n/4))/3; sp++ {
 				fmt.Print("  ")
 			}
 			fmt.Print("* ")
+		// print baris tengah
 		} else if i == n/2+1 {
 			for ast = 1; ast <= n; ast++ {
 				fmt.Print("* ")
 			}
+
+		// print baris kedua 2 asterisk dan spasi (right)
 		} else if i > n/2 && i < n {
 			for sp = 1; sp <= n/2; sp++ {
 				fmt.Print("  ")
@@ -36,6 +52,7 @@ func main() {
 				fmt.Print("  ")
 			}
 			fmt.Print("* ")
+		// print baris terakhir
 		} else {
 			for ast = 1; ast <= n/2; ast++ {
 				fmt.Print("* ")
@@ -46,6 +63,7 @@ func main() {
 			}
 			fmt.Print("* ")
 		}
+		// untuk space
 		fmt.Println()
 	}
 
